@@ -335,71 +335,20 @@ curl http://localhost:3000/health
 ### Sample API Calls
 
 **1 — Apartment for sale (full match)**
-```bash
-curl -X POST http://localhost:3000/extract-property \
-  -H "Content-Type: application/json" \
-  -d '{"text": "شقة للبيع 120 متر بسعر 500000 جنيه مصري"}'
-```
-```json
-{
-  "success": true,
-  "data": {
-    "area_m2":            { "value": 120,        "confidence": 1.0 },
-    "price":              { "value": 500000, "currency": "EGP", "confidence": 1.0 },
-    "property_type":      { "value": "apartment", "confidence": 1.0 },
-    "purpose":            { "value": "sale",      "confidence": 1.0 },
-    "overall_confidence": 1.0
-  }
-}
-```
+
+<img width="1920" height="1000" alt="Image" src="https://github.com/user-attachments/assets/13007f45-3f87-4616-9e96-dfe9747fa08a" />
 
 **2 — Villa for rent (Arabic-Indic digits)**
-```bash
-curl -X POST http://localhost:3000/extract-property \
-  -H "Content-Type: application/json" \
-  -d '{"text": "فيلا للإيجار مساحة ٣٠٠م٢ الإيجار ١٢٠٠ دولار شهريا"}'
-```
-```json
-{
-  "success": true,
-  "data": {
-    "area_m2":            { "value": 300,  "confidence": 1.0 },
-    "price":              { "value": 1200, "currency": "USD", "confidence": 1.0 },
-    "property_type":      { "value": "villa", "confidence": 1.0 },
-    "purpose":            { "value": "rent",  "confidence": 1.0 },
-    "overall_confidence": 1.0
-  }
-}
-```
+
+<img width="1911" height="1021" alt="Image" src="https://github.com/user-attachments/assets/01cb9c4e-e2b9-4c46-ae7a-13cff4e9c6c8" />
 
 **3 — Partial match (purpose missing from text)**
-```bash
-curl -X POST http://localhost:3000/extract-property \
-  -H "Content-Type: application/json" \
-  -d '{"text": "أرض 500 م2 بسعر 200000 جنيه"}'
-```
-```json
-{
-  "success": true,
-  "data": {
-    "area_m2":            { "value": 500,    "confidence": 1.0 },
-    "price":              { "value": 200000, "currency": "EGP", "confidence": 1.0 },
-    "property_type":      { "value": "land", "confidence": 1.0 },
-    "purpose":            { "value": null,   "confidence": 0.0 },
-    "overall_confidence": 0.75
-  }
-}
-```
+
+<img width="1900" height="1028" alt="Image" src="https://github.com/user-attachments/assets/2be84f28-9447-4ba0-80cc-c05d5bcfb5d1" />
 
 **4 — Validation error**
-```bash
-curl -X POST http://localhost:3000/extract-property \
-  -H "Content-Type: application/json" \
-  -d '{}'
-```
-```json
-{ "success": false, "error": "Missing required field: \"text\"" }
-```
+
+<img width="1916" height="1030" alt="Image" src="https://github.com/user-attachments/assets/0484b5bc-c897-4f3f-81ee-20cbed5b6f04" />
 
 ---
 
