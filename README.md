@@ -194,14 +194,5 @@ Arabic property listings follow highly predictable patterns. Regex + keyword dic
 
 ---
 
-## Local Development (no Docker)
 
-```bash
-npm install
-npm run dev    # nodemon auto-reload
-# or
-npm start      # production mode
-```
-
-Override port: `PORT=8080 npm start`
 
