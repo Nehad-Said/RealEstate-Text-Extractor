@@ -1,0 +1,22 @@
+{
+  "name": "arabic-property-extractor",
+  "version": "1.0.0",
+  "description": "REST API that extracts structured fields from Arabic property listings using rule-based NLP",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev":   "nodemon src/app.js"
+  },
+  "keywords": ["arabic", "nlp", "property", "real-estate", "extraction", "rest-api"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+
